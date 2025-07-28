@@ -1,9 +1,10 @@
 plugins {
     kotlin("jvm") version "1.9.23"
+    id("maven-publish")
 }
 
 group = "com.agentic"
-version = "0.1.0"
+version = "0.1.0-alpha"
 
 repositories {
     mavenCentral()
@@ -30,4 +31,26 @@ kotlin {
 }
 tasks.test {
     useJUnitPlatform()
+}
+
+// Publishing configuration for GitHub Packages
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            from(components["java"])
+            groupId = project.group.toString()
+            artifactId = "kotlin-agentic"
+            version = project.version.toString()
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/anoopg87/KAgentic")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR") ?: ""
+                password = System.getenv("KAGENTIC_PUBLISH_TOKEN") ?: ""
+            }
+        }
+    }
 }
