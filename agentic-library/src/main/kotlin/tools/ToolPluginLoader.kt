@@ -13,7 +13,9 @@ class ToolPluginLoaderImpl : ToolPluginLoader {
             "filereader" -> FileReaderTool()
             "apicaller" -> APICallerTool()
             else -> object : ToolHandler {
+                override fun canHandle(input: String): Boolean = false
                 override suspend fun handle(input: String): String = "Unknown tool: $config"
+                override fun score(input: String): Int = 0
             }
         }
     }

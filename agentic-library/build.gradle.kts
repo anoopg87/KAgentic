@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.agentic"
-version = "0.1.0-alpha"
+version = "0.0.0-alpha"
 
 repositories {
     mavenCentral()
