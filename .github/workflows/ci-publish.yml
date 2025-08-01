@@ -53,6 +53,13 @@ jobs:
             gradle-${{ runner.os }}-
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+      - name: Print GitHub Actor and Token Info
+        env:
+          GITHUB_ACTOR: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ secrets.KAGENTIC_GRADLE_PUBLISH_TOKEN }}
+        run: |
+          echo "GITHUB_ACTOR: $GITHUB_ACTOR"
+          echo "GITHUB_TOKEN length: ${#GITHUB_TOKEN}"
       - name: Publish to GitHub Packages
         env:
           GITHUB_ACTOR: ${{ github.actor }}
