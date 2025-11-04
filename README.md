@@ -1,9 +1,10 @@
 # KAgentic: Agentic AI Framework for Kotlin
 
+[![CI](https://github.com/anoopg87/KAgentic/actions/workflows/ci-publish.yml/badge.svg)](https://github.com/anoopg87/KAgentic/actions/workflows/ci-publish.yml)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.23-purple.svg)](https://kotlinlang.org/)
 [![JVM](https://img.shields.io/badge/JVM-17+-orange.svg)](https://www.oracle.com/java/)
-[![Version](https://img.shields.io/badge/version-0.1.0--alpha-green.svg)](https://github.com/anoopg87/KAgentic)
+[![Version](https://img.shields.io/badge/version-0.1.0--alpha-green.svg)](https://github.com/anoopg87/KAgentic/releases)
 
 A modular, production-ready Kotlin library for building agentic AI applications on the JVM.
 
