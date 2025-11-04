@@ -5,4 +5,6 @@ pluginManagement {
         google()
     }
 }
+
+rootProject.name = "kagentic"
 include(":agentic-library")
