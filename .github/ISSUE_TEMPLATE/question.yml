@@ -1,0 +1,79 @@
+name: ❓ Question
+description: Ask a question about KAgentic
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your question! Please check the documentation first, then fill out the form below.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: I'm trying to understand...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide context about what you're trying to achieve
+      placeholder: I'm building an application that...
+    validations:
+      required: true
+
+  - type: textarea
+    id: tried
+    attributes:
+      label: What Have You Tried?
+      description: What have you already tried?
+      placeholder: I've tried... / I've looked at...
+    validations:
+      required: false
+
+  - type: textarea
+    id: code
+    attributes:
+      label: Code Sample (if applicable)
+      description: Provide a code sample if relevant to your question
+      render: kotlin
+      placeholder: |
+        val agent = AgentFramework(...)
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Question Category
+      description: What is your question about?
+      options:
+        - Getting Started
+        - LLM Providers
+        - Tools
+        - Agent Orchestration
+        - Memory/Storage
+        - Configuration
+        - Best Practices
+        - Performance
+        - Deployment
+        - Other
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      description: Please confirm the following
+      options:
+        - label: I have read the documentation
+          required: true
+        - label: I have checked existing questions/issues
+          required: true
+        - label: This is not a bug report (use bug template instead)
+          required: true

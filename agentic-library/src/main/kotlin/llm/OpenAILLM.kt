@@ -55,14 +55,17 @@ class OpenAILLM(
         }
         if (logEnabled) logger?.log("OpenAILLM request: $input to $url")
         return try {
-            val response: HttpResponse = client.post(url) {
-                contentType(ContentType.Application.Json)
-                header("Authorization", "Bearer $apiKey")
-                setBody(Json.encodeToJsonElement(payload))
+            // Retry with exponential backoff for transient network errors
+            retryWithBackoff(maxRetries = 3) {
+                val response: HttpResponse = client.post(url) {
+                    contentType(ContentType.Application.Json)
+                    header("Authorization", "Bearer $apiKey")
+                    setBody(Json.encodeToJsonElement(payload))
+                }
+                val responseBody = response.bodyAsText()
+                if (logEnabled) logger?.log("OpenAILLM response: $responseBody")
+                responseBody
             }
-            val responseBody = response.bodyAsText()
-            if (logEnabled) logger?.log("OpenAILLM response: $responseBody")
-            responseBody
         } catch (e: Exception) {
             if (logEnabled) logger?.log("OpenAILLM error: ${e.message}\nStackTrace: ${e.stackTraceToString()}")
             "Error: ${e.message}"
