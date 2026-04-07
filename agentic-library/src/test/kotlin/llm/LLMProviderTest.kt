@@ -25,7 +25,7 @@ class LLMProviderTest {
     fun testOpenAILLMInstantiation() {
         val openai = OpenAILLM(
             apiKey = "test-api-key",
-            model = "gpt-4"
+            model = OpenAILLM.Model.GPT_5
         )
         assertNotNull(openai)
         assertTrue(openai.apiKey == "test-api-key")
@@ -35,7 +35,7 @@ class LLMProviderTest {
     fun testClaudeLLMInstantiation() {
         val claude = ClaudeLLM(
             apiKey = "test-api-key",
-            model = "claude-3-opus-20240229"
+            model = ClaudeLLM.Model.CLAUDE_OPUS_4
         )
         assertNotNull(claude)
         assertTrue(claude.apiKey == "test-api-key")
@@ -44,18 +44,18 @@ class LLMProviderTest {
     @Test
     fun testOllamaLLMInstantiation() {
         val ollama = OllamaLLM(
-            model = "llama2",
-            baseUrl = "http://localhost:11434"
+            model = OllamaLLM.Model.LLAMA2,
+            endpoint = "http://localhost:11434"
         )
         assertNotNull(ollama)
-        assertTrue(ollama.model == "llama2")
+        assertTrue(ollama.model == OllamaLLM.Model.LLAMA2)
     }
 
     @Test
     fun testCohereLLMInstantiation() {
         val cohere = CohereLLM(
             apiKey = "test-api-key",
-            model = "command"
+            model = CohereLLM.Model.COMMAND
         )
         assertNotNull(cohere)
         assertTrue(cohere.apiKey == "test-api-key")
@@ -65,7 +65,7 @@ class LLMProviderTest {
     fun testGrokLLMInstantiation() {
         val grok = GrokLLM(
             apiKey = "test-api-key",
-            model = "grok-1"
+            model = GrokLLM.Model.GROK_4
         )
         assertNotNull(grok)
         assertTrue(grok.apiKey == "test-api-key")
@@ -75,7 +75,7 @@ class LLMProviderTest {
     fun testDeepSeekLLMInstantiation() {
         val deepseek = DeepSeekLLM(
             apiKey = "test-api-key",
-            model = "deepseek-chat"
+            model = DeepSeekLLM.Model.DEEPSEEK_V3_0324
         )
         assertNotNull(deepseek)
         assertTrue(deepseek.apiKey == "test-api-key")

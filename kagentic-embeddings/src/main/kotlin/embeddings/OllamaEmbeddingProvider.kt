@@ -41,8 +41,8 @@ import llm.EmbeddingProvider
  * @property logEnabled Enables detailed request/response logging if true.
  */
 class OllamaEmbeddingProvider(
-    private val model: Model = Model.NOMIC_EMBED_TEXT,
-    private val endpoint: String = "http://localhost:11434",
+    val model: Model = Model.NOMIC_EMBED_TEXT,
+    val endpoint: String = "http://localhost:11434",
     private val logger: Logger? = null,
     private val logEnabled: Boolean = false
 ) : EmbeddingProvider {

@@ -34,7 +34,7 @@ import llm.retryWithBackoff
  */
 class OpenAIEmbeddingProvider(
     private val apiKey: String,
-    private val model: Model = Model.TEXT_EMBEDDING_3_SMALL,
+    val model: Model = Model.TEXT_EMBEDDING_3_SMALL,
     private val logger: Logger? = null,
     private val logEnabled: Boolean = false
 ) : EmbeddingProvider {

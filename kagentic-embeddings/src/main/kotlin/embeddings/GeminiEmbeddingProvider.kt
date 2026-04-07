@@ -33,7 +33,7 @@ import llm.retryWithBackoff
  */
 class GeminiEmbeddingProvider(
     private val apiKey: String,
-    private val model: Model = Model.TEXT_EMBEDDING_004,
+    val model: Model = Model.TEXT_EMBEDDING_004,
     private val logger: Logger? = null,
     private val logEnabled: Boolean = false
 ) : EmbeddingProvider {
