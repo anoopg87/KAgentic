@@ -39,6 +39,75 @@ This project adheres to a code of conduct that all contributors are expected to 
    git checkout -b feature/your-feature-name
    ```
 
+## 🤖 Using Claude Code Skills
+
+KAgentic includes specialized Claude Code skills to accelerate development. These skills provide interactive guidance for common contribution tasks.
+
+### Quick Start with Skills
+
+When working with Claude Code in the KAgentic repository, simply describe what you want to do:
+
+- **"I want to create a weather tool"** → Triggers `add-custom-tool` skill
+- **"Add support for Mistral AI"** → Triggers `add-llm-provider` skill  
+- **"Build a multi-agent workflow"** → Triggers `create-agent-graph` skill
+- **"Write tests for my tool"** → Triggers `add-test-with-mock` skill
+- **"How does the agent framework work?"** → Triggers `understand-agent-flow` skill
+- **"Implement custom memory"** → Triggers `add-memory-strategy` skill
+
+### Available Skills
+
+Each skill provides:
+- ✅ Step-by-step implementation guidance
+- ✅ Working code templates
+- ✅ Best practices from existing implementations
+- ✅ Testing approaches with examples
+- ✅ Troubleshooting tips
+
+### Skill-Driven Development Workflow
+
+**Example: Adding a Custom Tool**
+
+```
+1. "I want to create a weather tool that fetches current conditions"
+   → Skill provides ToolHandler template
+
+2. Implement canHandle(), score(), and handle() methods
+   → Skill shows 4 existing tool patterns
+
+3. "Write tests for the weather tool"
+   → Skill provides test template with mocks
+
+4. "Add documentation for the weather tool"
+   → Skill shows KDoc patterns from existing tools
+```
+
+**Example: Adding an LLM Provider**
+
+```
+1. "Add support for Mistral AI"
+   → Skill provides LLMProvider template
+
+2. Configure authentication and API endpoint
+   → Skill shows 7 existing provider patterns (Bearer token, custom headers, etc.)
+
+3. Add retry logic and error handling
+   → Skill references RetryHelper patterns
+
+4. "Write tests for Mistral provider"
+   → Skill provides mock LLM test patterns
+```
+
+### When to Use Skills
+
+- **New contributor?** Start with `understand-agent-flow` to learn the architecture
+- **Adding a tool?** Use `add-custom-tool` for templates and patterns
+- **Integrating an LLM?** Use `add-llm-provider` for API integration guidance
+- **Building workflows?** Use `create-agent-graph` for graph examples
+- **Writing tests?** Use `add-test-with-mock` for testing patterns
+- **Advanced features?** Use `add-memory-strategy` for custom memory implementations
+
+Skills ensure your contributions follow project conventions and best practices.
+
 ## 🤝 How to Contribute
 
 ### Types of Contributions

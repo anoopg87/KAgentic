@@ -156,6 +156,64 @@ Check out the [examples/](examples/) directory for complete, runnable examples:
 - **[Multi-Agent Graph](examples/multi-agent-graph/)**: Chaining multiple specialized agents
 - **[Custom Tools](examples/custom-tools/)**: Creating your own tools
 
+## 🤖 Claude Code Skills
+
+KAgentic includes specialized Claude Code skills for accelerated development. These skills provide interactive, context-aware guidance directly in your development environment.
+
+### Available Skills
+
+- **add-custom-tool**: Create tools implementing the `ToolHandler` interface
+  - Trigger: "I want to create a weather tool" or "Add a custom tool"
+  - Provides templates, examples, and step-by-step guidance
+  - References 4 existing tools as patterns
+
+- **add-llm-provider**: Integrate new LLM providers
+  - Trigger: "Add support for Mistral AI" or "Integrate new LLM"
+  - Includes authentication patterns, retry logic, and API integration
+  - References 7 existing providers (OpenAI, Claude, Gemini, Ollama, Cohere, Grok, DeepSeek)
+
+- **create-agent-graph**: Build multi-agent workflows
+  - Trigger: "Create a workflow with 3 agents" or "Build an agent graph"
+  - Covers both SimpleAgentGraph (sequential) and ConditionalAgentGraph (branching)
+  - Includes complete workflow examples
+
+- **add-test-with-mock**: Write tests with mock objects
+  - Trigger: "Write tests for my custom tool" or "Add test coverage"
+  - Shows testing patterns from 9 existing test files
+  - Includes mock LLM and tool patterns
+
+- **understand-agent-flow**: Debug and trace agent execution
+  - Trigger: "How does agent execution work?" or "Debug agent flow"
+  - Explains core orchestration, tool selection, and memory integration
+  - Visual flow diagrams and execution traces
+
+- **add-memory-strategy**: Implement custom memory strategies
+  - Trigger: "Create a custom memory strategy" or "Add memory implementation"
+  - Shows thread-safety patterns with Mutex
+  - Advanced feature for specialized use cases
+
+### Using Skills with Claude Code
+
+Skills auto-activate when you're working in the KAgentic repository with Claude Code. Simply describe what you want to do in natural language:
+
+```
+"I want to create a weather tool that fetches current conditions"
+→ Triggers add-custom-tool skill with step-by-step guidance
+
+"Add support for Together AI as an LLM provider"
+→ Triggers add-llm-provider skill with templates and patterns
+
+"Build a workflow where agents analyze, process, and summarize data"
+→ Triggers create-agent-graph skill with graph examples
+```
+
+Each skill provides:
+- ✅ Step-by-step implementation guidance
+- ✅ Working code templates
+- ✅ Best practices from existing code
+- ✅ Testing approaches
+- ✅ Troubleshooting tips
+
 ## 🔧 Extending KAgentic
 
 ### Create Custom Tools
